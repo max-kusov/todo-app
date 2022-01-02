@@ -1,0 +1,56 @@
+.field {
+  padding: 8px 12px;
+  width: 100%;
+
+  background: #FFFFFF;
+  border: 1px solid #EFEFEF;
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  &:focus {
+    border-color: #9c9c9c;
+  }
+}
+
+
+
+// модалка
+.modal {
+  width: 235px;
+  height: 148px;
+  padding: 18px;
+
+  background: #FFFFFF;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  position: relative;
+  &__close {
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    cursor: pointer;
+    transition:         transform .3s ease-in-out;
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+
+  button {
+    margin-top: 10px;
+    width: 100%;
+  }
+  & ul {
+    margin-top: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  & li {
+    cursor: pointer;
+    // margin-right: 5px;
+  }
+  .active {
+    border: 2px solid rgb(145, 145, 145);
+  }
+}

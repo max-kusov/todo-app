@@ -1,0 +1,48 @@
+.list {
+  margin-bottom: 30px;
+  & li{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 12px;
+
+    i {
+      display: inline-flex;
+      svg {
+        opacity: .6;
+      }
+    }
+    span {
+      margin-left: 8px;
+      flex: 1;
+    }
+    &:hover .remove{
+      opacity: .2;
+    }
+    
+    & .remove {
+      opacity: 0;
+      &:hover {
+        opacity: .7;
+      }
+    }
+    &.active {
+      background: #FFFFFF;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, .05);
+      border-radius: 4px;
+      margin: 2px 0;
+    }
+    &:hover {
+      background: rgba(255, 255, 255, .4);
+      border-radius: 4px;
+    }
+
+  }
+  & .add-list {
+    opacity: .4;
+    transition: all .3s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
