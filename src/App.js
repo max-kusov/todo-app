@@ -1,11 +1,24 @@
 import './App.css';
 import React, { useState } from 'react';
 import List from './components/List/List';
-import AddBtnList from './components/AddBtnList/AddBtnList';
+import AddList from './components/AddList/AddList';
 
-
+import DB from './assets/db.json'
+import Tasks from './components/Tasks/Tasks';
 
 function App() {
+  const [lists, setLists] = useState(
+    DB.lists.map(item => {
+      item.color = DB.colors.filter(color => color.id === item.colorId)[0].hex
+      return item
+    })
+  )
+
+  const onAddList = (obj) => {
+    const newList = [...lists, obj]
+    setLists(newList)
+  }
+
   return (
     <div className="todo">
       <div className="sidebar">
@@ -16,19 +29,16 @@ function App() {
             </svg>, name: 'Все задачи'
           }
         ]} />
-        <List items={[
-          { name: 'Покупки', color: '#FF6464' },
-          { name: 'Фронт', color: '#C355F5', active: true },
-          { name: 'Бэк', color: '#B6E6BD' },
+        <List items={lists}
+          isRemovable
+          onRemove={(list) => {
+            console.log(list)
+          }}
+        />
 
-        ]}
-          isRemovable />
-
-        <AddBtnList />
+        <AddList colors={DB.colors} onAdd={onAddList} />
       </div>
-      <div className="tasks">
-
-      </div>
+      <Tasks />
     </div>
   );
 }
