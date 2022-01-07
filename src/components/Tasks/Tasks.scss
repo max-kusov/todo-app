@@ -24,9 +24,20 @@
   }
   & .items {
     margin-top: 15px;
+    & h2  {
+      font-weight: bold;
+      font-size: 22px;
+
+      color: #C9D1D3;
+      text-align: center;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+    }
     .item {
       display: flex;
       align-items: center;
+      margin-bottom: 15px;
 
       input {
         margin-left: 15px;
