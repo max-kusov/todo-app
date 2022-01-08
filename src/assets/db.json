@@ -7,7 +7,7 @@
     },
     {
       "id": 2,
-      "name": "Test 2",
+      "name": "тест",
       "colorId": 6
     },
     {
@@ -38,6 +38,12 @@
       "listId": 2,
       "text": "Изучить паттерны проектирования",
       "completed": false
+    },
+    {
+      "listId": 2,
+      "text": "kkk",
+      "completed": false,
+      "id": 3
     }
   ],
   "colors": [

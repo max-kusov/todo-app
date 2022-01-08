@@ -1,18 +1,32 @@
+import axios from "axios";
 import React from "react";
 import editSvg from '../../assets/img/edit.svg'
 
-import './Tasks.scss'
 
-const Tasks = ({ list }) => {
+import './Tasks.scss'
+import AddTaskForm from "./AddTaskForm";
+
+const Tasks = ({ list, onEditTitle, onAddTask }) => {
+
+  const editTitle = () => {
+    const newTitle = window.prompt('Название списка', list.name)
+    if (newTitle) {
+      onEditTitle(list.id, newTitle)
+      axios.patch('http://localhost:3001/lists/' + list.id, {
+        name: newTitle
+      }).catch(() => {
+        alert('Не удалось обновить название списка')
+      })
+    }
+  }
+
 
   return (
     <div className="tasks">
       <h2 className="title">
         {list.name}
         <img
-          onClick={() => {
-            console.log(1)
-          }}
+          onClick={editTitle}
           src={editSvg}
           alt="edit icon" />
       </h2>
@@ -33,6 +47,7 @@ const Tasks = ({ list }) => {
             </div>
           ))
         }
+        <AddTaskForm list={list} onAddTask={onAddTask} />
       </div>
     </div>
   )

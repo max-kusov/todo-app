@@ -22,7 +22,11 @@ const List = ({ items, isRemovable, onClick, onRemove, onClickItem, activeItem }
       {items.map((item, i) => (
         <li key={i}
           // className={`${item.active ? "active" : ''}  ${item.className ? 'add-list' : ''}`}
-          className={`${activeItem && activeItem.id === item.id ? "active" : ''}  ${item.className ? 'add-list' : ''}`}
+
+          // className={`${activeItem && activeItem.id === item.id ? "active" : ''}  ${item.className ? 'add-list' : ''}`}
+
+          className={`${item.active ? 'active' : activeItem && activeItem.id === item.id ? "active" : ''}  ${item.className ? 'add-list' : ''}`}
+
 
           onClick={onClickItem ? () => onClickItem(item) : null}
         >

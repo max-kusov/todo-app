@@ -36,6 +36,7 @@
   border: none;
   padding: 10px 20px;
   cursor: pointer;
+  font-size: 14px;
 
   transition: all .1s;
   &:hover {
@@ -43,5 +44,18 @@
   }
   &:active {
     background: darken(#4DD599, 10%);
+  }
+
+  &--grey {
+    color: #444;
+    background: #F4F6F8;
+
+    // margin-left: 10px;
+    &:hover {
+      background: darken(#F4F6F8, 3%);
+    }
+    &:active {
+      background: darken(#F4F6F8, 6%);
+    }
   }
 }
