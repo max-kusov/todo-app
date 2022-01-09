@@ -1,11 +1,6 @@
 {
   "lists": [
     {
-      "id": 1,
-      "name": "Test 1",
-      "colorId": 4
-    },
-    {
       "id": 2,
       "name": "тест",
       "colorId": 6
@@ -24,6 +19,21 @@
       "name": "Frontend",
       "colorId": 4,
       "id": 7
+    },
+    {
+      "name": "JavaScript",
+      "colorId": 2,
+      "id": 8
+    },
+    {
+      "name": "asas",
+      "colorId": 1,
+      "id": 9
+    },
+    {
+      "name": "asda",
+      "colorId": 3,
+      "id": 10
     }
   ],
   "tasks": [
@@ -44,6 +54,12 @@
       "text": "kkk",
       "completed": false,
       "id": 3
+    },
+    {
+      "listId": 2,
+      "text": "222",
+      "completed": false,
+      "id": 4
     }
   ],
   "colors": [

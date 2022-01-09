@@ -6,7 +6,7 @@ import editSvg from '../../assets/img/edit.svg'
 import './Tasks.scss'
 import AddTaskForm from "./AddTaskForm";
 
-const Tasks = ({ list, onEditTitle, onAddTask }) => {
+const Tasks = ({ list, onEditTitle, onAddTask, withOutEmpty }) => {
 
   const editTitle = () => {
     const newTitle = window.prompt('Название списка', list.name)
@@ -23,7 +23,7 @@ const Tasks = ({ list, onEditTitle, onAddTask }) => {
 
   return (
     <div className="tasks">
-      <h2 className="title">
+      <h2 style={{ color: list.color.hex }} className="title">
         {list.name}
         <img
           onClick={editTitle}
@@ -31,7 +31,7 @@ const Tasks = ({ list, onEditTitle, onAddTask }) => {
           alt="edit icon" />
       </h2>
       <div className="items">
-        {!list.tasks.length && <h2>Задачи отсутствуют</h2>}
+        {!withOutEmpty && !list.tasks.length && <h2>Задачи отсутствуют</h2>}
         {
           list.tasks.map(task => (
             <div key={task.id} className="item">

@@ -59,3 +59,9 @@
     }
   }
 }
+.tasks-wrapper {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 530px;
+}
